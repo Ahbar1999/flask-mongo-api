@@ -2,7 +2,7 @@
 ## with docker image ##
 	docker pull ahbar99/flask-mongo:latest
 	
-	docker run --publish 5000:5000 ahbar99/flask-mongo
+	docker run --publish 5000:5000 --env-file env_vars ahbar99/flask-mongo
 
 ## without docker image ##
 	git clone https://github.com/Ahbar1999/flask-mongo-api.git

@@ -5,11 +5,16 @@ from faker import Faker
 from pymongo.server_api import ServerApi
 from bson import json_util
 import json
+import os, sys
 
 app = Flask(__name__)
 fake = Faker()
-username = "ahbar1234"
-password = "BrCNr7bAJqpOmTDR"
+username = os.environ.get("USERNAME", None)
+password = os.environ.get("PASSWORD", None)
+if not username or not password: 
+    print("couldnt fetch username or password from env") 
+    sys.exit(1) 
+ 
 uri = f"mongodb+srv://{username}:{password}@cluster0.q9uushk.mongodb.net/?retryWrites=true&w=majority"
 mongo = MongoClient(uri, server_api=ServerApi('1'))    
 # get user collection
