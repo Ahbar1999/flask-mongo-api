@@ -9,4 +9,10 @@
 
 	cd flask-mongo-api
 
-	python -m flask --app main run 
+	python -m flask --app main run
+
+# Features #
+## Libraries Used ##
+	1. Flask - Python microframework for building web apps
+	2. PyMongo - Mongodb client library
+	3. faker - for generating fake/demo data
